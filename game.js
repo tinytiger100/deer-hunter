@@ -1807,7 +1807,6 @@
       path: [cross.end],
       leg: Math.max(8, leg),
     });
-    if (poacher && phase === 'playing') toast('POACHER!', false);
   }
 
   function farAway(animal) {
@@ -2126,6 +2125,8 @@
   }
 
   function updatePoacherBanner() {
+    if (poacherEl) poacherEl.hidden = true;
+    return;
     if (!poacherEl) return;
     let man = null;
     for (const animal of animals) {
